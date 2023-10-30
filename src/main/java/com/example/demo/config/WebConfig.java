@@ -9,7 +9,7 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/api/runCurl")
-                .allowedOrigins("http://localhost:3000")
+                .allowedOrigins("http://kcs2.co.kr:3000")
                 .allowCredentials(true);
     }
 }
