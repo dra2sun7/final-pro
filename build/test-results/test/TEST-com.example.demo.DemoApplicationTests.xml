@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.demo.DemoApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-11-01T03:23:33" hostname="ihyeonhoui-MacBookAir.local" time="0.36">
+<testsuite name="com.example.demo.DemoApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-11-01T05:18:16" hostname="ihyeonhoui-MacBookAir.local" time="0.371">
   <properties/>
-  <testcase name="contextLoads()" classname="com.example.demo.DemoApplicationTests" time="0.36"/>
-  <system-out><![CDATA[12:23:31.985 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.demo.DemoApplicationTests]: DemoApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-12:23:32.026 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.demo.DemoApplication for test class com.example.demo.DemoApplicationTests
+  <testcase name="contextLoads()" classname="com.example.demo.DemoApplicationTests" time="0.371"/>
+  <system-out><![CDATA[14:18:14.762 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.demo.DemoApplicationTests]: DemoApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+14:18:14.805 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.demo.DemoApplication for test class com.example.demo.DemoApplicationTests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -13,25 +13,25 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.1.3)
 
-2023-11-01T12:23:32.207+09:00  INFO 39027 --- [    Test worker] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests using Java 19.0.1 with PID 39027 (started by ihyeonho in /Users/ihyeonho/Desktop/1030 add DNS address/final-pro)
-2023-11-01T12:23:32.207+09:00  INFO 39027 --- [    Test worker] com.example.demo.DemoApplicationTests    : No active profile set, falling back to 1 default profile: "default"
-2023-11-01T12:23:32.473+09:00  INFO 39027 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-11-01T12:23:32.483+09:00  INFO 39027 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 JPA repository interfaces.
-2023-11-01T12:23:32.662+09:00  INFO 39027 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-11-01T12:23:32.759+09:00  INFO 39027 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:b04f36d0-65d2-4017-b6e6-a3d744793976 user=SA
-2023-11-01T12:23:32.760+09:00  INFO 39027 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-11-01T12:23:32.787+09:00  INFO 39027 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-11-01T12:23:32.811+09:00  INFO 39027 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
-2023-11-01T12:23:32.812+09:00  INFO 39027 --- [    Test worker] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2023-11-01T12:23:32.866+09:00  INFO 39027 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-11-01T12:23:32.919+09:00  INFO 39027 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2023-11-01T12:23:32.972+09:00  INFO 39027 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-11-01T12:23:33.062+09:00  INFO 39027 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-11-01T12:23:33.064+09:00  INFO 39027 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-11-01T12:23:33.135+09:00  WARN 39027 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-11-01T12:23:33.253+09:00  WARN 39027 --- [    Test worker] o.s.b.a.m.MustacheAutoConfiguration      : Cannot find template location: classpath:/templates/ (please add some templates, check your Mustache configuration, or set spring.mustache.check-template-location=false)
-2023-11-01T12:23:33.264+09:00  WARN 39027 --- [    Test worker] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2023-11-01T12:23:33.315+09:00  INFO 39027 --- [    Test worker] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 1.229 seconds (process running for 1.719)
+2023-11-01T14:18:14.993+09:00  INFO 43393 --- [    Test worker] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests using Java 19.0.1 with PID 43393 (started by ihyeonho in /Users/ihyeonho/Desktop/1030 add DNS address/final-pro)
+2023-11-01T14:18:14.994+09:00  INFO 43393 --- [    Test worker] com.example.demo.DemoApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2023-11-01T14:18:15.257+09:00  INFO 43393 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-01T14:18:15.265+09:00  INFO 43393 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2023-11-01T14:18:15.452+09:00  INFO 43393 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-01T14:18:15.537+09:00  INFO 43393 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:17c02201-f8a8-4411-a816-faeeba9abf5a user=SA
+2023-11-01T14:18:15.537+09:00  INFO 43393 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-01T14:18:15.559+09:00  INFO 43393 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-01T14:18:15.583+09:00  INFO 43393 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-11-01T14:18:15.584+09:00  INFO 43393 --- [    Test worker] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-01T14:18:15.648+09:00  INFO 43393 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-11-01T14:18:15.702+09:00  INFO 43393 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-01T14:18:15.754+09:00  INFO 43393 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-11-01T14:18:15.846+09:00  INFO 43393 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-01T14:18:15.848+09:00  INFO 43393 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-01T14:18:15.921+09:00  WARN 43393 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-01T14:18:16.040+09:00  WARN 43393 --- [    Test worker] o.s.b.a.m.MustacheAutoConfiguration      : Cannot find template location: classpath:/templates/ (please add some templates, check your Mustache configuration, or set spring.mustache.check-template-location=false)
+2023-11-01T14:18:16.053+09:00  WARN 43393 --- [    Test worker] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2023-11-01T14:18:16.103+09:00  INFO 43393 --- [    Test worker] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 1.227 seconds (process running for 1.783)
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
