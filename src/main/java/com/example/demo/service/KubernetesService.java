@@ -33,7 +33,6 @@
                     .withMasterUrl(apiServer)
                     .withOauthToken(token)
                     .withTrustCerts(true)
-                    .withNamespace("default")
                     .build();
 
             try (KubernetesClient kubernetesClient = new DefaultKubernetesClient(config)) {
