@@ -20,8 +20,8 @@ public class TestController {
     public ResponseEntity<List<String>> runCurl(@RequestBody Map<String, String> params, Model model){
         String apiServer = params.get("apiServer");
         String token = params.get("token");
-        System.out.println(apiServer+"here is the end");
-        System.out.println(token+"here is the end");  
+        System.out.println(apiServer+"\n\n");
+        System.out.println(token+"\n\n");
         List<String> logMessage = kubernetesService.deployJobFromYaml(apiServer, token);
         return ResponseEntity.ok(logMessage);
     }

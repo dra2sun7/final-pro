@@ -27,6 +27,7 @@
     public class KubernetesService {
 
         public List<String> deployJobFromYaml(String apiServer, String token) {
+            System.out.println("Start KCS2 Scanner\n");
             List<String> logMessage = new ArrayList<>();
 
             Config config = new ConfigBuilder()
@@ -39,12 +40,16 @@
                 try {
 
                     NodeList nodeList = kubernetesClient.nodes().list();
+
+                    System.out.println("Successfully call Nodelist");
+
                     for (Node node : nodeList.getItems()) {
                         String nodeName = node.getMetadata().getName();
                         String yamlTemplate = loadYamlTemplateFromFile();
                         String yamlContent = yamlTemplate.replace("${nodeName}", nodeName);
                         InputStream inputStream = new ByteArrayInputStream(yamlContent.getBytes());
-
+                        
+                        System.out.println("Here is yaml file's content\n"+yamlContent);
 
                         kubernetesClient.load(inputStream).create();
 
@@ -54,7 +59,7 @@
                         
                         inputStream.close();
 
-                        waitForJobCompletion(kubernetesClient, nodeName+"kubebench");
+                        waitForJobCompletion(kubernetesClient, nodeName+"kubebench", logMessage);
 
                         PodList podList = kubernetesClient.pods().inNamespace("default").list();
                         String log = null;
@@ -71,16 +76,20 @@
                                 break;
                             }
                         }
-                        deleteJob(kubernetesClient,nodeName+"kubebench");
+                        deleteJob(kubernetesClient,nodeName+"kubebench",logMessage);
                     }
                 } catch (IOException e) {
-
-                    logMessage.add("There is a trouble with Cluster");
-
+                    logMessage.add("Given TOKEN's authority is lack. Please check following authority");
+                    logMessage.add("I want to do");
+                    logMessage.add("· Read your node list");
+                    logMessage.add("· Read your pod list");
+                    logMessage.add("· Create JOB in your nodes");
+                    logMessage.add("· Delete JOB in your nodes");
+                    logMessage.add("· GET JOB's data in your nodes");
                     throw new RuntimeException(e);
                 }
             } catch (KubernetesClientException e) {
-                logMessage.add("There is a trouble with Cluster");
+                logMessage.add("Your URL or TOKEN is incorrect. Please check again");
                 e.printStackTrace();
                 // Handle Kubernetes client errors
             }
@@ -93,9 +102,9 @@
                 return new String(bytes, StandardCharsets.UTF_8);
             }
         }
-        private void waitForJobCompletion(KubernetesClient kubernetesClient, String jobName) {
+        private void waitForJobCompletion(KubernetesClient kubernetesClient, String jobName, List<String> logMessage) {
             long timeoutMillis = 5 * 60 * 1000; // 최대 대기 시간 (예: 10분)
-            long pollingIntervalMillis = 5000; // 상태 확인 간격 (예: 5초)
+            long pollingIntervalMillis = 1000; // 상태 확인 간격 (예: 1초)
 
             long startTime = System.currentTimeMillis();
             boolean jobCompleted = false;
@@ -113,6 +122,7 @@
                     try {
                         Thread.sleep(pollingIntervalMillis); // 일정 간격으로 상태 확인
                     } catch (InterruptedException e) {
+                        System.out.println("Time out error with "+ jobName);
                         Thread.currentThread().interrupt();
                     }
                 }
@@ -121,10 +131,11 @@
                 System.out.println("Job completed successfully.");
             } else {
                 System.err.println("Timeout waiting for Job completion.");
+                logMessage.add("Time out error with "+ jobName);
             }
         }
 
-        private void deleteJob(KubernetesClient kubernetesClient, String jobName) {
+        private void deleteJob(KubernetesClient kubernetesClient, String jobName, List<String> logMessage) {
             try {
                 kubernetesClient.batch().v1().jobs().inNamespace("default").withName(jobName).delete();
 
@@ -132,6 +143,7 @@
             } catch (KubernetesClientException e) {
                 e.printStackTrace();
                 System.err.println("Error while deleting Job.");
+                logMessage.add("Error while deleting Job.");
             }
         }
     }
