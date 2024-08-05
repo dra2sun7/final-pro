@@ -1,4 +1,4 @@
-# Kubernetes Cluster 보안 Scanner
+# Kubernetes Cluster 보안 Scanner (Backend Server)
 
 Scanner를 위한 Backend에 대한 기본 코드입니다.
 
