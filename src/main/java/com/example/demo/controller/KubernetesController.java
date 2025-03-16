@@ -11,12 +11,9 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api")
-public class TestController {
-    private final KubernetesService kubernetesService;
-    public TestController(KubernetesService kubernetesService) {
-        this.kubernetesService = kubernetesService;
-    }
-    @RequestMapping(value = "/runCurl", method = {RequestMethod.POST, RequestMethod.GET})
+public class KubernetesController {
+    public KubernetesService kubernetesService;
+    @RequestMapping(value = "/runCurl", method = RequestMethod.POST)
     public ResponseEntity<List<String>> runCurl(@RequestBody Map<String, String> params, Model model){
         String apiServer = params.get("apiServer");
         String token = params.get("token");
